@@ -1,2 +1,2 @@
-# arcadeatlas
+# GameChaser
 Project Two
