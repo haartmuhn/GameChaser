@@ -1,17 +1,13 @@
 const User = require("./user");
-const Games = require("./Games");
+const Games = require("./games");
 
-// Set up associations here if needed
-// For example, if you had a one-to-many relationship:
-// User.hasMany(Games, {
-//   foreignKey: 'user_id',
-//   onDelete: 'CASCADE'
-// });
-// Games.belongsTo(User, {
-//   foreignKey: 'user_id'
-// });
 
-module.exports = {
-  User,
-  Games,
-};
+User.hasMany(Games, {
+  foreignKey: 'user_id',
+  onDelete: 'CASCADE'
+});
+Games.belongsTo(User, {
+  foreignKey: 'user_id'
+});
+
+module.exports = { User, Games };
