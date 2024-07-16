@@ -1,3 +1,12 @@
+-- DROP DATABASE
+DROP DATABASE IF EXISTS games_db;
+
+-- CREATE DATABASE
+CREATE DATABASE games_db;
+
+-- CONNECT DATABASE
+\c games_db;
+
 -- Drop existing tables if they exist
 DROP TABLE IF EXISTS titles CASCADE;
 DROP TABLE IF EXISTS platforms CASCADE;
