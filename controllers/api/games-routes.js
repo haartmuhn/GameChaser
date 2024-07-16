@@ -1,15 +1,18 @@
-const router = require('express').Router();
-const { Games, User } = require('./index');
-const withAuth = require('../utilis/auth');
+const router = require("express").Router();
+const { games, user } = require("./index");
 
-router.post('/', withAuth, async (req, res) => {
-    try {
-        const newGame = await Games.create({
-            ...req.body,
-            userId: req.session.userId,
-        })
-    }
+router.get("/", (req, res) => {
+  // Corrected path
+  games.findall({});
+});
 
-})
+router.get("/:id", (req, res) => {
+  games.findbypk({});
+});
 
-module.exports = router;
+router.post("/", (req, res) => {
+  // Corrected path
+  games.create({});
+});
+
+module.exports = router; // Corrected typo
