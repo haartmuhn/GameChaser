@@ -1,22 +1,18 @@
-const router = require('express').Router();
-const { games, user } = require('./index');
+const router = require("express").Router();
+const { games, user } = require("./index");
 
-router.get('./', (req, res) => {
-    games.findall({
-         
-    })
+router.get("/", (req, res) => {
+  // Corrected path
+  games.findall({});
 });
 
-router.get('/:id', (req, res) => {
-    games.findbypk({
-
-    })
+router.get("/:id", (req, res) => {
+  games.findbypk({});
 });
 
-router.post('./', (req, res) => {
-    games.create({
-
-    })
+router.post("/", (req, res) => {
+  // Corrected path
+  games.create({});
 });
 
-module.export = router;
+module.exports = router; // Corrected typo
