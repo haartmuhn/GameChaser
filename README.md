@@ -25,10 +25,10 @@ by Adam Rosenberg, Andrew Hartmann, Justin Herrera, Ted Perez, and Heather Weltz
 ## Credits
 <ul>    
     <li>Tutoring session with Katie Redford</li>
-    <li>Office hours with __________</li>
+    <li>Office hours with Anthony Barragan</li>
     
     
 </ul>    
 
 ## License
-    none?
+    MIT
