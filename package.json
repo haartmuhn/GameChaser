@@ -17,6 +17,9 @@
   "bugs": {
     "url": "https://github.com/haartmuhn/GameChaser/issues"
   },
+  "scripts": {
+    "build:css": "postcss src/styles.css -o public/css/styles.css"
+  },
   "dependencies": {
     "bcrypt": "^5.0.0",
     "connect-session-sequelize": "^7.0.4",
@@ -32,6 +35,6 @@
     "eslint-config-prettier": "^8.3.0",
     "nodemon": "^2.0.3",
     "prettier": "^2.3.0",
-    "tailwindcss": "^3.4.4"
+    "tailwindcss": "^3.4.5"
   }
 }
