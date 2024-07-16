@@ -1,25 +1,14 @@
-const sequelize = require('../config/connection');
-const { User, Games } = require('../models');
-
-const userData = require('./userData.json');
-const gameData = require('./projectData.json');
+const seedGenres = require("./genres");
+const seedPlatforms = require("./platforms");
+const seedTitles = require("./titles");
 
 const seedDatabase = async () => {
-    await sequelize.sync({ force: true });
-
-    const users = await User.bulkCreate(userData, {
-        individualHooks: true,
-        returning: true,
-    });
-
-    for (const game of gameData) {
-        await Games.create({
-            ...game,
-            user_id: users[Math.floor(Math.random() * users.length)].id,
-        });
-    }
-
-    process.exit(0);
+  await seedGenres();
+  await seedPlatforms();
+  await seedTitles();
+  console.log("Seeding complete!");
 };
 
-seedDatabase();
+seedDatabase().catch((err) => {
+  console.error("Seeding failed:", err);
+});
