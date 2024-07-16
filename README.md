@@ -12,7 +12,8 @@ by Adam Rosenberg, Andrew Hartmann, Justin Herrera, Ted Perez, and Heather Weltz
     GameChaser is ... 
 
 ## Installation
-    Run npm install in the terminal. ...
+    Run npm install in the terminal.
+    Run npm install tailwindcss@latest.
     
 ## Usage
     Run node server.js in the terminal. ...
