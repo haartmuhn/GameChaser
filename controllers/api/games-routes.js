@@ -1,10 +1,6 @@
-const router = require("express").Router();
-const { games, user } = require("./index");
-
-router.get("/", (req, res) => {
-  // Corrected path
-  games.findall({});
-});
+const router = require('express').Router();
+const { Games, User } = require('./index');
+const withAuth = require('../utils/auth');
 
 router.get("/:id", (req, res) => {
   games.findbypk({});
