@@ -35,7 +35,7 @@ Title.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: "games",
+        modelName: "title",
     }
 );
 

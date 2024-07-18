@@ -1,3 +1,4 @@
+// const sequelize = require('../config/connection');
 const { Genre } = require('../models');
 
 const genresData = [
@@ -16,7 +17,11 @@ const genresData = [
     { name: 'Simulation' },
     { name: 'Sports' },
 ];
-
+// const seedGenres = async () => {
+//     await sequelize.sync({ force: true });
+//     await Genre.bulkCreate(genresData);
+//     process.exit(0);
+// };
 const seedGenres = () => Genre.bulkCreate(genresData);
 
 module.exports = seedGenres;
