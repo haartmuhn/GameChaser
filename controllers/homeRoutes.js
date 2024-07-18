@@ -7,7 +7,7 @@ router.get('/', async (req, res) => {
         const gamesData = await Games.findAll({
             include: [
                 {
-                    model; User,
+                    model: User,
                     attributes: ['title'],
                 },
             ],
@@ -35,10 +35,10 @@ router.get('games/:id', async (req, res) => {
             ],
         });
 
-        const game = gameData.get({ plain: true });
+        const game = gamesData.get({ plain: true });
 
         res.render('games', {
-            ...Game,
+            ...game,
             loggedIn: req.session.loggedIn
         });
     } catch (err) {

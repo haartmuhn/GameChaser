@@ -1,0 +1,24 @@
+const { Model, DataTypes } = require('sequelize');
+const sequelize = require('../config/connection');
+
+class Genre extends Model { }
+
+
+Genre.init(
+    {
+        name: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+    },
+
+    {
+        sequelize,
+        timestamps: false,
+        freezeTableName: true,
+        underscored: true,
+        modelName: "games",
+    }
+);
+
+module.exports = Genre;
