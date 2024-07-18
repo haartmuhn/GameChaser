@@ -17,7 +17,7 @@ class Platform extends Model {}
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: "games",
+        modelName: "platform",
     }
 );
 

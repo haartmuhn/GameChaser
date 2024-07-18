@@ -1,6 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
+
 class Genre extends Model { }
 
 
@@ -9,6 +10,7 @@ Genre.init(
         name: {
             type: DataTypes.STRING,
             allowNull: false,
+          
         },
     },
 
@@ -17,7 +19,7 @@ Genre.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: "games",
+        modelName: "genre",
     }
 );
 

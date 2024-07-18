@@ -8,6 +8,10 @@ const TitlesPlatforms = require('./titlesPlatforms');
 
 
 
+Genre.hasMany(Title, {
+    foreignKey: 'genreId'
+}
+)
 Title.belongsTo(Genre, { foreignKey: 'genreId' });
 Title.belongsToMany(Platform, { through: TitlesPlatforms, foreignKey: 'titleId' });
 Platform.belongsToMany(Title, { through: TitlesPlatforms, foreignKey: 'platformId' });
