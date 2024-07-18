@@ -1,5 +1,11 @@
 const User = require("./user");
 const Games = require("./games");
+const Genre = require('./genre');
+const Platform = require('./platform');
+const Title = require('./title');
+const TitlesPlatforms = require('./titlesPlatforms');
+
+
 
 
 Title.belongsTo(Genre, { foreignKey: 'genreId' });
@@ -14,4 +20,4 @@ Platform.belongsToMany(Title, { through: TitlesPlatforms, foreignKey: 'platformI
 //   foreignKey: 'user_id'
 // });
 
-module.exports = { User, Games };
+module.exports = { User, Games, Genre, Title, TitlesPlatforms, Platform};
