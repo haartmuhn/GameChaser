@@ -1,5 +1,8 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
+const { Title } = require('./title');
+const { Platform } = require('./platform');
+
 
 class TitlesPlatforms extends Model { }
 
@@ -9,7 +12,7 @@ TitlesPlatforms.init(
         type: DataTypes.INTEGER,
         references: {
             model: Title,
-            key: 'id',
+            key: 'titleId',
         },
         primaryKey: true,
     },
@@ -17,7 +20,7 @@ TitlesPlatforms.init(
         type: DataTypes.INTEGER,
         references: {
             model: Platform,
-            key: 'id',
+            key: 'platformId',
         },
         primaryKey: true,
     },
@@ -27,7 +30,7 @@ TitlesPlatforms.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: "games",
+        modelName: "titlePlatforms",
     }
 );
 
