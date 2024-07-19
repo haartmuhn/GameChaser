@@ -1,8 +1,10 @@
-const seedGenres = require("./genres");
-const seedPlatforms = require("./platforms");
-const seedTitles = require("./titles");
+const sequelize = require('../config/connection');
+const seedGenres = require("./genre-seeds");
+const seedPlatforms = require("./platforms-seeds");
+const seedTitles = require("./titles-seeds");
 
 const seedDatabase = async () => {
+  await sequelize.sync({ force: true });
   await seedGenres();
   await seedPlatforms();
   await seedTitles();
