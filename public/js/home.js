@@ -8,6 +8,9 @@
 //     gameDiv.innerHTML = `
 //         <img src="${game}" alt="${game.title}">
 
+        
+    
+
 //     `;
 //     displayGames.appendChild(gameDiv);
 // }
@@ -40,6 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
         `;
     displayGames.appendChild(gameDiv);
   }
+
 
   // Handle login button click
   const loginButton = document.querySelector(".login-button");
