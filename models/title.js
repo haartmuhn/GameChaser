@@ -1,22 +1,24 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
-const { Genre } = require('./genre');
 
 class Title extends Model { }
 
 
 Title.init(
     {
+        id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            primaryKey: true,
+            autoIncrement: true,
+        },
         name: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        genreId: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: Genre,
-                key: 'id',
-            },
+        genre: {
+            type: DataTypes.STRING,
+           allowNull: false,
         },
         decade_created: {
             type: DataTypes.STRING,
