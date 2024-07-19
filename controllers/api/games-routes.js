@@ -1,76 +1,27 @@
-const router = require('express').Router();
-const { Games } = require('../../models');
-const withAuth = require('../../utils/auth');
+const router = require("express").Router();
+const { Title } = require("../../models");
+const withAuth = require("../../utils/auth");
 
-router.post("/", withAuth, async (req, res) => {
-  try {
-    const newGame = await Games.create({
-      ...req.body,
-      userId: req.session.userId,
-    });
-    res.status(200).json(newGame);
-  } catch (err) {
-    res.status(400).json(err);
-  }
+router.get("/search", (req, res) => {
+  const genre = req.query.genre;
+  const platforms = req.query.platforms;
+  const ratings = req.query.ratings;
+  const decades = req.query.decades;
+  const title = req.query.titles;
+  const titleData = Title.findAll({
+    where: {
+      [Op.or]: [
+        { name: title },
+        { decade_created: decades },
+        { rating: ratings },
+        { genre: genre },
+        { platforms: platforms },
+      ],
+    },
+  });
+
+  const titles = titleData.map((title) => title.get({ plain: true }));
+  res.json(titles);
 });
-
-// router.put('/games/:id', withAuth, async (req, res) => {
-//   const id = req.params.id;
-//   const data = req.body;
-
-//   try {
-//     const game = await db.Games.update(data, {
-//       where: {
-//         id
-//       }
-//     });
-//     res.send("list updated");
-//   } catch (err) {
-//     res, send(err);
-//   }
-// });
-
-router.delete("/:id", withAuth, async (req, res) => {
-  try {
-    const gameData = await Games.destroy({
-      where: {
-        id: req.params.id,
-        userId: req.session.userId,
-      },
-    });
-
-    if (!gameDataData) {
-      res.status(404).json({ message: "no game found" });
-      return;
-    }
-
-    res.status(200).json(gameData);
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-
-// router.get('/', withAuth, async (req, res) => {
-//   try {
-//     const titles = await Title.findAll({
-//       include: [
-//         {
-//           model: Genre,
-//           attributes: ['name'],
-//         },
-//         {
-//           model: Platform,
-//           attributes: ['name'],
-//           through: { attributes: [] }, // Exclude TitlesPlatforms attributes
-//         },
-//       ],
-//     });
-//     res.json(titles);
-//   } catch (error) {
-//     console.error('Error fetching titles:', error);
-//     res.status(500).json({ error: 'Error fetching titles' });
-//   }
-// });
-
 
 module.exports = router; // Corrected typo

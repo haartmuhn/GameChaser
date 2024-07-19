@@ -1,6 +1,4 @@
 const User = require("./user");
-const Games = require("./games");
-const Genre = require('./genre');
 const Platform = require('./platform');
 const Title = require('./title');
 const TitlesPlatforms = require('./titlesPlatforms');
@@ -8,11 +6,11 @@ const TitlesPlatforms = require('./titlesPlatforms');
 
 
 
-Genre.hasMany(Title, {
-    foreignKey: 'genreId'
-}
-)
-Title.belongsTo(Genre, { foreignKey: 'genreId' });
+// Genre.hasMany(Title, {
+//     foreignKey: 'genreId'
+// }
+// )
+
 Title.belongsToMany(Platform, { through: TitlesPlatforms, foreignKey: 'titleId' });
 Platform.belongsToMany(Title, { through: TitlesPlatforms, foreignKey: 'platformId' });
 
@@ -24,4 +22,4 @@ Platform.belongsToMany(Title, { through: TitlesPlatforms, foreignKey: 'platformI
 //   foreignKey: 'user_id'
 // });
 
-module.exports = { User, Games, Genre, Title, TitlesPlatforms, Platform};
+module.exports = { User, Title, TitlesPlatforms, Platform};

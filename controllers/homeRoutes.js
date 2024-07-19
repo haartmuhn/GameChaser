@@ -76,4 +76,35 @@ router.get('/login', (req, res) => {
     res.render('login');
 });
 
+
+router.get('/preferences', async (req, res) => {
+    // console.log('homepage route');
+    try {
+        // const gamesData = await Title.findAll({
+            //     //     {
+                //     //         model: User,
+                //     //         attributes: ['title'],
+                //     //     },
+                //     // ],
+                // });
+                
+                // const games = gamesData.map((game) => game.get({ plain: true }));
+                // console.log("games", games);
+                
+                res.render('preferences', {
+                    // games,
+                    // loggedIn: req.session.loggedIn
+                });
+            } catch (err) {
+                res.json(err);
+            }
+        });
+        
 module.exports = router;
+        
+
+
+
+
+//     // where: {user_id: req.session.user_id}
+        
