@@ -1,19 +1,27 @@
-const router = require('express').Router();
-const { Title } = require('../../models');
-const withAuth = require('../../utils/auth');
-
+const router = require("express").Router();
+const { Title } = require("../../models");
+const withAuth = require("../../utils/auth");
 
 router.get("/search", (req, res) => {
-  const searchValue = req.body.search
+  const genre = req.query.genre;
+  const platforms = req.query.platforms;
+  const ratings = req.query.ratings;
+  const decades = req.query.decades;
+  const title = req.query.titles;
   const titleData = Title.findAll({
     where: {
-      [Op.or]: [{ name: searchValue }, { decade_created: searchValue }, { rating: searchValue }, { genre: searchValue }, { platforms: searchValue }],
+      [Op.or]: [
+        { name: title },
+        { decade_created: decades },
+        { rating: ratings },
+        { genre: genre },
+        { platforms: platforms },
+      ],
     },
-  })
+  });
 
-  const titles = titleData.map((title) => title.get({ plain: true }))
-  res.json(titles)
-})
-
+  const titles = titleData.map((title) => title.get({ plain: true }));
+  res.json(titles);
+});
 
 module.exports = router; // Corrected typo
