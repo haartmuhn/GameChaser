@@ -2,13 +2,13 @@ const router = require("express").Router();
 const { Title } = require("../../models");
 const withAuth = require("../../utils/auth");
 
-router.get("/search", (req, res) => {
+router.get("/search", withAuth, async (req, res) => {
   const genre = req.query.genre;
   const platforms = req.query.platforms;
   const ratings = req.query.ratings;
   const decades = req.query.decades;
   const title = req.query.titles;
-  const titleData = Title.findAll({
+  const titleData = await Title.findAll({
     where: {
       [Op.or]: [
         { name: title },
