@@ -5,7 +5,11 @@ module.exports = {
     './views/**/*.handlebars',
      ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'dark-blue': '#1d3149',
+      },
+    },
   },
   plugins: [],
 }
