@@ -1,0 +1,23 @@
+
+
+
+   
+
+<div class="p-5 md:p-10">    
+    <div class="columns-1 gap-5 lg:content-auto sm:columns-2 lg:columns-4 xl:columns-6 [&>img:not(:first-child)]:mt-5 lg:[&>img:not(first-child)]:mt-8 display-games">
+       {{#each games}}
+        <div class="game-card">
+            <img src="{{image}}" alt="{{name}}" class="game-card-img">
+            <div class="game-card-content">
+                <h3 class="game-card-title">{{name}}</h3>
+                <p class="game-card-text">{{description}}</p>
+                <a href="/game/{{id}}" class="game-card-link">Play</a>
+            </div>
+        </div>
+        {{/each}}
+           
+      </div>
+</div>    
+    
+<script src="./js/home.js"></script>
+    
