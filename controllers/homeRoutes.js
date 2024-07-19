@@ -75,15 +75,6 @@ router.get("/login", (req, res) => {
   res.render("login");
 });
 
-router.get("/about", async (req, res) => {
-  console.log("about route");
-  try {
-    res.render("about");
-  } catch (err) {
-    res.json(err);
-  }
-});
-
 router.get("/search", async (req, res) => {
   console.log("search route");
   try {
