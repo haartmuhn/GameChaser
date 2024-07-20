@@ -1,34 +1,4 @@
-// let displayGames = document.querySelector('.display-games');
-// let games = 8;
 
-// for (let i = 0; i < games; i++) {
-//     let game = "./images/image" + i + 1 + ".jpg";
-//     let gameDiv = document.createElement('div');
-//     gameDiv.classList.add('game');
-//     gameDiv.innerHTML = `
-//         <img src="${game}" alt="${game.title}">
-
-        
-    
-
-//     `;
-//     displayGames.appendChild(gameDiv);
-// }
-
-// let loginButton = document.querySelector('.login-button');
-// document.querySelector('.login-button').addEventListener('click', function() {
-//     window.location = '/login';
-// });
-
-// document.querySelector("#subBtn").addEventListener("click", function () {
-//     //get the value from the input
-
-//     //make a fetch request to the back end for the games that match the search "/api/games/search"
-
-//     //get back the games and populate on page
-
-//     //Loop over the data and create a "game card" for each result from the search. You can either use the current game section or add an area for them to be displayed in
-// })
 
 document.addEventListener("DOMContentLoaded", () => {
   // Display default games on page load
@@ -44,12 +14,32 @@ document.addEventListener("DOMContentLoaded", () => {
     displayGames.appendChild(gameDiv);
   }
 
+  // Handle profile button click
+  document.addEventListener('DOMContentLoaded', (event) => {
+    // Select the button element
+    const buttonElement = document.getElementById('profile-button');
 
-  // Handle login button click
-  const loginButton = document.querySelector(".login-button");
-  loginButton.addEventListener("click", () => {
-    window.location = "/login";
+    // Add an event listener to the button
+    buttonElement.addEventListener('click', () => {
+        // Navigate to a new URL
+        window.location.href = 'http://localhost:3001/login';
+    });
+});
+
+document.addEventListener('DOMContentLoaded', (event) => {
+  const divElement = document.getElementById('menu');
+  const hideButton = document.getElementById('hideButton');
+
+  hideButton.addEventListener('click', () => {
+      divElement.style.visibility = 'hidden';
   });
+});
+
+  // // Handle login button click
+  // const loginButton = document.querySelector(".login-button");
+  // loginButton.addEventListener("click", () => {
+  //   window.location = "/login";
+  // });
 
   // Handle search button click
   document.querySelector("#subBtn").addEventListener("click", async () => {

@@ -93,6 +93,27 @@ router.get("/search", async (req, res) => {
   }
 });
 
+router.get("/profile", async (req, res) => {
+  console.log("profile route");
+  try {
+    res.render("profile");
+  } catch (err) {
+    res.json(err);
+  }
+  res.render("profile");
+});
+
+router.get("/signout", async (req, res) => {
+  console.log("signout route");
+  try {
+    res.render("signout");
+  } catch (err) {
+    res.json(err);
+  }
+  res.render("signout");
+});
+
+
 // router.get('/search', async (req, res) => {
 //     console.log('search route');
 //     try {
