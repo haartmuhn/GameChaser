@@ -44,10 +44,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
   // Handle search button click
   document.querySelector("#subBtn").addEventListener("click", async () => {
     const titles = document.querySelector("#search").value; // Get the value from the input
-    // const genreSearched = document.querySelector("").value;
-    // const ratingsSearched = document.querySelector("").value;
-    // const platformsSearched = document.querySelector("").value;
-    // const decadesSearched = document.querySelector("").value;
+    const genreSearched = document.querySelector("#genre").value;
+    const ratingsSearched = document.querySelector("#rating").value;
+    const platformsSearched = document.querySelector("#platform").value;
+    const decadesSearched = document.querySelector("#decadeCreated").value;
     try {
       // Make a fetch request to the backend for games that match the search
       const response = await fetch(
@@ -75,6 +75,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 `;
         displayGames.appendChild(gameDiv);
       });
+      console.log(games)
     } catch (error) {
       console.error("Error fetching games:", error);
     }
