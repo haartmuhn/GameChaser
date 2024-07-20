@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 document.addEventListener('DOMContentLoaded', (event) => {
-  const divElement = document.getElementById('menu');
+  const divElement = document.getElementsByClass('menu');
   const hideButton = document.getElementById('hideButton');
 
   hideButton.addEventListener('click', () => {
