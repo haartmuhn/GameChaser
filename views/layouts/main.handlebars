@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +8,6 @@
     <link rel="icon" type="image/x-icon" href="./images/Initial Logo.png" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
-
 <body class="bg-gray-800 h-5">
      <nav class="bg-gray-800">
         <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -23,7 +21,6 @@
                         <span class="sr-only">Open main menu</span>
                         <!--
             Icon when menu is closed.
-
             Menu open: "hidden", Menu closed: "block"
           -->
                         <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -33,7 +30,6 @@
                         </svg>
                         <!--
             Icon when menu is open.
-
             Menu open: "block", Menu closed: "hidden"
           -->
                         <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -61,8 +57,6 @@
                     </div>
                 </div>
                 <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                    
-
                     <!-- Profile dropdown -->
                     <div class="relative ml-3">
                         <div>
@@ -76,15 +70,13 @@
                                     alt="head-and-shoulders-icon">
                             </button>
                         </div>
-                        <div class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none menu" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
+                        <div class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none hidden menu" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
             <!-- Active: "bg-gray-100", Not Active: "" -->
             <a href="http://localhost:3001/profile" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">My Profile</a>
             <a href="http://localhost:3001/signout" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-2">Sign out</a>
           </div>
-
                         <!--
             Dropdown menu, show/hide based on menu state.
-
             Entering: "transition ease-out duration-100"
               From: "transform opacity-0 scale-95"
               To: "transform opacity-100 scale-100"
@@ -92,12 +84,10 @@
               From: "transform opacity-100 scale-100"
               To: "transform opacity-0 scale-95"
           -->
-                        
                     </div>
                 </div>
             </div>
         </div>
-
         <!-- Mobile menu, show/hide based on menu state. -->
         <div class="sm:hidden" id="mobile-menu">
             <div class="space-y-1 px-2 pb-3 pt-2">
@@ -113,23 +103,18 @@
             </div>
         </div>
     </nav>
-    
-
     <div class="flex w-full">
         {{{body}}}
     </div>
-
-
-<footer class="fixed z-20 bottom-0 w-full md:p-3 bg-gradient-to-b from-blue-500 via-white to-pink-500 border-t border-black"> 
-
+<footer class="fixed z-20 bottom-0 w-full md:p-3 bg-gradient-to-b from-blue-500 via-white to-pink-500 border-t border-black">
 <div>
     <div>
         <h2 class="flex justify-center font-extrabold mb-2 text-lg">Game Chaser developed by: </h2>
     </div>
     <div>
-        <ul class="flex justify-center content-between"> 
-            <li class="inline-block mr-6 ml-6"> 
-                <a href="https://github.com/AcoderRose" class="underline font-bold text-sm">Adam Rosenberg</a>  
+        <ul class="flex justify-center content-between">
+            <li class="inline-block mr-6 ml-6">
+                <a href="https://github.com/AcoderRose" class="underline font-bold text-sm">Adam Rosenberg</a>
             </li>
             <li class="inline-block mr-6 ml-6">
                 <a href="https://github.com/Justino11247" class="underline font-bold text-sm">Justin Herrera</a>
@@ -149,9 +134,12 @@
 </footer>
 <script src="./js/home.js"></script>
 <script src="./js/search.js"></script>
-
-    
+<script>
+$(document).ready(function() {
+    $('.profile-button').click(function() {
+        $('.menu').toggleClass('hidden');
+    });
+});
+</script>
 </body>
-
-
 </html>

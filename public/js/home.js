@@ -28,6 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
     buttonElement.addEventListener("click", () => {
       window.location.href = "http://localhost:3001/login";
     });
+
   }
   // Handle menu visibility
   const divElement = document.querySelector(".menu");
@@ -37,6 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
       divElement.style.visibility = "hidden";
     });
   }
+
 
   // // Handle login button click
   // const loginButton = document.querySelector(".login-button");
