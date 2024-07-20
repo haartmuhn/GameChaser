@@ -1,4 +1,5 @@
 const express = require("express");
+const app = express();
 const session = require("express-session");
 const exphbs = require("express-handlebars");
 const routes = require("./controllers");
@@ -8,7 +9,7 @@ const path = require("path"); // Ensure this line is present
 const sequelize = require("./config/connection");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
 
-const app = express();
+// const app = express();
 const PORT = process.env.PORT || 3001;
 
 // Set up Handlebars.js engine with custom helpers
@@ -29,30 +30,44 @@ app.use(session(sess));
 // Inform Express.js on which template engine to use
 app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
+app.set('views', path.join(__dirname, 'views'));
 
-// Image data to pass to the template
-const games = [
-  { id: 1, name: 'Animal Crossing', image: '/images/image1.jpg' },
-  { id: 2, name: 'Ape Escape 3', image: '/images/image2.png' },
-  { id: 3, name: 'Assassins Creed', image: '/images/image3.jpg' },
-  { id: 4, name: 'Balders Gate', image: '/images/image4.jpg' },
-  { id: 5, name: 'Stardew Valley', image: '/images/image5.png' },
-  { id: 6, name: 'Hearthstone', image: '/images/image6.png' },
-  { id: 7, name: 'Mario Party 8', image: '/images/image7.png' },
-  { id: 8, name: 'Wizard 101', image: '/images/image8.png' },
-  { id: 9, name: 'Call of Duty', image: '/images/image9.png' },
-  { id: 10, name: 'Cyberpunk', image: '/images/image10,jpg' },
-  { id: 11, name: 'Diablo IV', image: '/images/image11.png' },
-  { id: 12, name: 'Donkey Kong', image: '/images/image12.png' },
-  { id: 13, name: 'Fossil Fighters', image: '/images/image13.png' },
-  { id: 14, name: 'Halo2', image: '/images/image14.png' },
-  { id: 15, name: 'High on Life', image: '/images/image15.jpg' },
-  { id: 16, name: 'Phasmophobia', image: '/images/image16.jpg' },
-  { id: 17, name: 'Pokemon Stadium', image: '/images/image17.jpg' },
-  { id: 18, name: 'Portal 2', image: '/images/image18.jpg' },
-  { id: 19, name: 'Street Fighter v Tekken', image: '/images/image19.jpg' },
-  { id: 20, name: 'Zelda', image: '/images/image20,jpg' },
-];
+
+
+async function fetchImages() {
+  return [
+
+    { src: '/images/image1.jpg', alt: 'Animal Crossing' },
+    { src: '/images/image2.png', alt: 'Ape Escape 3' },
+    { src: '/images/image3.jpg', alt: 'Assassins Creed' },
+    { src: '/images/image4.jpg', alt: 'Balders Gate' },
+    { src: '/images/image5.png', alt: 'Stardew Valley' },
+    { src: '/images/image6.png', alt: 'Hearthstone' },
+    { src: '/images/image7.png', alt: 'Mario Party 8' },
+    { src: '/images/image8.png', alt: 'Wizard 101' },
+    { src: '/images/image9.png', alt: 'Call of Duty' },
+    { src: '/images/image10.jpg', alt: 'Cyberpunk' },
+    { src: '/images/image11.png', alt: 'Diablo IV' },
+    { src: '/images/image12.png', alt: 'Donkey Kong' },
+    { src: '/images/image13.png', alt: 'Fossil Fighters' },
+    { src: '/images/image14.png', alt: 'Halo2' },
+    { src: '/images/image15.jpg', alt: 'High on Life' },
+    { src: '/images/image16.jpg', alt: 'Phasmophobia' },
+    { src: '/images/image17.jpg', alt: 'Pokemon Stadium' },
+    { src: '/images/image18.jpg', alt: 'Portal 2' },
+    { src: '/images/image19.jpg', alt: 'Street Fighter v Tekken',  },
+    { src: '/images/image20.jpg', alt: 'Zelda' },
+  ];
+}
+// Shuffle function
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
+
 
 
 app.use(express.json());
@@ -62,8 +77,17 @@ app.use(express.static(path.join(__dirname, "public")));
 // Serve static files from the "public" directory
 app.use(express.static('public'));
 // Define a route to render the homepage.handlebars template
-app.get('/', (req, res) => {
-  res.render('homepage', { games });
+app.get('/', async (req, res) => {
+ 
+  try {
+    const images = await fetchImages();
+    const shuffledImages = shuffle(images);
+    console.log('Shuffled Images:', shuffledImages); // Debugging line
+    res.render('homepage', { games: shuffledImages });
+} catch (error) {
+    console.error('Error fetching images:', error);
+    res.status(500).send('Internal Server Error');
+}
 });
 
 app.use(routes);
