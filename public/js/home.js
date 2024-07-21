@@ -30,6 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
     buttonElement.addEventListener("click", () => {
       window.location.href = "http://localhost:3001/user";
     });
+
   }
   // Handle menu visibility
   const divElement = document.querySelector(".menu");
