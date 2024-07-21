@@ -1,3 +1,5 @@
+// console.log("Linked!!!");
+
 document.addEventListener("DOMContentLoaded", () => {
   // Display default games on page load
   const displayGames = document.querySelector(".display-games");
@@ -26,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const buttonElement = document.getElementById("profile-button");
   if (buttonElement) {
     buttonElement.addEventListener("click", () => {
-      window.location.href = "http://localhost:3001/login";
+      window.location.href = "http://localhost:3001/user";
     });
 
   }
@@ -39,6 +41,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // document
+  //   .querySelector('#subBtn')
+  //   .addEventListener('click');
 
   // // Handle login button click
   // const loginButton = document.querySelector(".login-button");
@@ -69,25 +74,28 @@ document.addEventListener("DOMContentLoaded", () => {
         })
       });
 
-      const games = await response.json(); // Get back the games and parse the JSON response
+      const games = await response.json();// Get back the games and parse the JSON response
+
+      console.log("++++++++++++++++++++++++++");
       console.log(games);
       // Clear previous results if needed
-      displayGames.innerHTML = "";
+      // displayGames.innerHTML = "";
 
       // Loop over the data and create a "game card" for each result from the search
-      games.forEach((game) => {
-        let gameDiv = document.createElement("div");
-        gameDiv.classList.add("game");
-        gameDiv.innerHTML = `
-                    <img src="${game.imageUrl}" alt="${game.title}">
-                    <h3>${game.title}</h3>
-                    <p>${game.description}</p>
-                `;
-        displayGames.appendChild(gameDiv);
-      });
-      console.log(game)
+      // games.forEach((game) => {
+      //   let gameDiv = document.createElement("div");
+      //   gameDiv.classList.add("game");
+      //   gameDiv.innerHTML = `
+      //               <img src="${game.imageUrl}" alt="${game.title}">
+      //               <h3>${game.title}</h3>
+      //               <p>${game.description}</p>
+      //           `;
+      //   displayGames.appendChild(gameDiv);
+      // });
+      // console.log(game)
     } catch (error) {
       console.error("Error fetching games:", error);
     }
   });
 });
+

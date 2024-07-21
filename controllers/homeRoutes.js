@@ -1,74 +1,23 @@
 const router = require("express").Router();
 const { Title, User } = require("../models");
 const withAuth = require("../utils/auth");
+// const { Op } = require('sequelize');
+// const express = require("express");
 
 router.get("/", async (req, res) => {
   console.log("homepage route");
   try {
-    const gamesData = await Title.findAll({
-      // include: [
-      //     {
-      //         model: User,
-      //         attributes: ['title'],
-      //     },
-      // ],
-    });
 
-    const games = gamesData.map((game) => game.get({ plain: true }));
-    console.log("games", games);
+    res.render("homepage");
 
-    res.render("homepage", {
-      games,
-      // loggedIn: req.session.loggedIn
-    });
   } catch (err) {
     res.json(err);
   }
 });
 
-router.get("games/:id", async (req, res) => {
-  try {
-    const gamesData = await Games.findbypk(req.params.id, {
-      include: [
-        {
-          model: User,
-          attributes: ["title"],
-        },
-      ],
-    });
-
-    const game = gamesData.get({ plain: true });
-
-    res.render("games", {
-      ...game,
-      loggedIn: req.session.loggedIn,
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-
-router.get("profile", withAuth, async (req, res) => {
-  try {
-    const userData = await User.findbypk(req.session.userId, {
-      attributes: { exclude: ["password"] },
-      include: [{ model: Games }],
-    });
-
-    const user = userData.get({ plain: true });
-
-    res.render("profile", {
-      ...user,
-      loggedIn: true,
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-
-router.get("/login", (req, res) => {
+router.get("/user", (req, res) => {
   if (req.session.logged_in) {
-    res.redirect("/profile");
+    res.redirect("/user");
     return;
   }
 
@@ -84,6 +33,37 @@ router.get("/about", async (req, res) => {
   }
 });
 
+// router.get("/", async (req, res) => {
+//   const { genre, platforms, ratings, decades, titles } = req.body;
+
+//   try {
+//     console.log('+--------------------- api/users/ hit!!! --------------------');
+
+//     const titleData = await Title.findAll({
+//       where: {
+//         [Op.or]: [
+//           { name: titles },
+//           { decade_created: decades },
+//           { rating: ratings },
+//           { genre: genre },
+//           { platforms: platforms },
+//         ],
+//       },
+//     });
+
+
+
+//     const titlesFound = titleData.map((title) => title.get({ plain: true }));
+//     console.log("=============================================");
+//     console.log(titlesFound);
+
+//     res.render('/', titlesFound);
+
+//   } catch (error) {
+//     console.error("Error fetching titles:", error);
+//     res.status(500).json({ error: 'Internal Server Error' });
+//   }
+// });
 router.get("/search", async (req, res) => {
   console.log("search route");
   try {
@@ -92,50 +72,6 @@ router.get("/search", async (req, res) => {
     res.json(err);
   }
 });
-
-router.get("/profile", async (req, res) => {
-  console.log("profile route");
-  try {
-    res.render("profile");
-  } catch (err) {
-    res.json(err);
-  }
-  res.render("profile");
-});
-
-router.get("/signout", async (req, res) => {
-  console.log("signout route");
-  try {
-    res.render("signout");
-  } catch (err) {
-    res.json(err);
-  }
-  res.render("signout");
-});
-
-
-// router.get('/search', async (req, res) => {
-//     console.log('search route');
-//     try {
-//         const gamesData = await Title.findAll({
-//                 //     {
-//                     //         model: User,
-//                 //     //         attributes: ['title'],
-//                 //     //     },
-//                 //     // ],
-//                 // });
-
-//                 // const games = gamesData.map((game) => game.get({ plain: true }));
-//                 // console.log("games", games);
-
-//                 res.render('preferences', {
-//                     // games,
-//                     // loggedIn: req.session.loggedIn
-//                 });
-//             } catch (err) {
-//                 res.json(err);
-//             }
-//         });
 
 module.exports = router;
 
