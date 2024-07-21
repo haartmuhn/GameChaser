@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const buttonElement = document.getElementById("profile-button");
   if (buttonElement) {
     buttonElement.addEventListener("click", () => {
-      window.location.href = "http://localhost:3001/user";
+      window.location.href = "http://localhost:3001/profile";
     });
 
   }

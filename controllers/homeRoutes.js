@@ -33,6 +33,24 @@ router.get("/about", async (req, res) => {
   }
 });
 
+router.get("/profile", (req, res) => {
+  if (req.session.logged_in) {
+    res.redirect("/profile");
+    return;
+  }
+
+  res.render("profile");
+});
+
+router.get("/signout", (req, res) => {
+  if (req.session.logged_in) {
+    res.redirect("/signout");
+    return;
+  }
+
+  res.render("signout");
+});
+
 // router.get("/", async (req, res) => {
 //   const { genre, platforms, ratings, decades, titles } = req.body;
 
@@ -76,3 +94,22 @@ router.get("/search", async (req, res) => {
 module.exports = router;
 
 //     // where: {user_id: req.session.user_id}
+router.get("/profile", async (req, res) => {
+  console.log("profile route");
+  try {
+    res.render("profile");
+  } catch (err) {
+    res.json(err);
+  }
+  res.render("profile");
+});
+
+router.get("/signout", async (req, res) => {
+  console.log("signout route");
+  try {
+    res.render("signout");
+  } catch (err) {
+    res.json(err);
+  }
+  res.render("signout");
+});
