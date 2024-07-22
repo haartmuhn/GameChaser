@@ -75,20 +75,20 @@ document.addEventListener("DOMContentLoaded", () => {
       console.log("++++++++++++++++++++++++++");
       console.log(games);
       // Clear previous results if needed
-      // displayGames.innerHTML = "";
+      displayGames.innerHTML = "";
 
       // Loop over the data and create a "game card" for each result from the search
-      // games.forEach((game) => {
-      //   let gameDiv = document.createElement("div");
-      //   gameDiv.classList.add("game");
-      //   gameDiv.innerHTML = `
-      //               <img src="${game.imageUrl}" alt="${game.title}">
-      //               <h3>${game.title}</h3>
-      //               <p>${game.description}</p>
-      //           `;
-      //   displayGames.appendChild(gameDiv);
-      // });
-      // console.log(game)
+      //games.forEach((game) => {
+        //let gameDiv = document.createElement("div");
+        //gameDiv.classList.add("game");
+        //gameDiv.innerHTML = `
+                    //<img src="${game.imageUrl}" alt="${game.title}">
+                    //<h3>${game.name}</h3>
+                    //<p>${game.description}</p>
+                //`;
+        //displayGames.appendChild(gameDiv);
+      //});
+      
     } catch (error) {
       console.error("Error fetching games:", error);
     }
