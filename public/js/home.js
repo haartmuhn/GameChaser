@@ -52,12 +52,10 @@ document.addEventListener("DOMContentLoaded", () => {
   // });
 
   // Handle search button click
-  document.querySelector("#subBtn").addEventListener("click", async () => {
-    const titles = document.querySelector("#secondSelect").value; // Get the value from the input
-    const genreSearched = document.querySelector("#genre").value;
-    const ratingsSearched = document.querySelector("#rating").value;
-    const platformsSearched = document.querySelector("#platform").value;
-    const decadesSearched = document.querySelector("#decadeCreated").value;
+  document.querySelector("form").addEventListener("submit", async (event) => {
+    event.preventDefault();
+    const paramOne = document.querySelector("#firstSelect").value; // Get the value from the input
+    const paramTwo = document.querySelector("#secondSelect").value;
     try {
       // Make a fetch request to the backend for games that match the search
       const response = await fetch('/api/search', {
@@ -66,11 +64,9 @@ document.addEventListener("DOMContentLoaded", () => {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          titles: titles,
-          genre: genreSearched,
-          rating: ratingsSearched,
-          platforms: platformsSearched,
-          decade: decadesSearched
+          filter:paramOne,
+          value: paramTwo
+
         })
       });
 
