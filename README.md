@@ -91,7 +91,7 @@ npm start
 http://localhost:3001
 ```
 
-The application will be running at `http://localhost:3000`.
+The application will be running at `http://localhost:3001`.
 
 ## Usage
 
@@ -102,12 +102,11 @@ The application will be running at `http://localhost:3000`.
 
 ## Features
 
--   **Game Recommendations:** Personalized game suggestions based on user preferences.
 -   **Game Search:** Search for games by various criteria.
 -   **User Authentication:** Secure login and registration.
 -   **Responsive Design:** Mobile-friendly layout using Tailwind CSS.
 -   **Dynamic Content:** Server-side rendering of game data and user-specific content.
--   **Future Enhancements:** Plans to include features like friends list, messaging, achievements, and leaderboards.
+-   **Future Enhancements:** Plans to include personalized game suggestions, features like friends list, messaging, achievements, and leaderboards.
 
 ## Contributing
 
