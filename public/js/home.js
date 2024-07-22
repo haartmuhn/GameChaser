@@ -1,97 +1,66 @@
-// console.log("Linked!!!");
-
 document.addEventListener("DOMContentLoaded", () => {
-  // Display default games on page load
-  const displayGames = document.querySelector(".display-games");
-  if (displayGames) {
-    fetch("/api/search")
-      .then((response) => {
+  const form = document.querySelector("form");
+  if (form) {
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      const paramOne = document.querySelector("#firstSelect").value;
+      const paramTwo = document.querySelector("#secondSelect").value;
+
+      try {
+        const response = await fetch("/api/search", {
+          // Ensure this matches your backend route
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            filter: paramOne,
+            value: paramTwo,
+          }),
+        });
+
         if (!response.ok) {
-          throw new Error("Network response was not ok");
+          throw new Error(`HTTP error! status: ${response.status}`);
         }
-        return response.json();
-      })
-      .then((titleData) => {
-        for (let i = 0; i < titleData.length; i++) {
-          let game = titleData[i].imageUrl || `./images/image${i + 1}.jpg`;
-          let gameDiv = document.createElement("div");
-          gameDiv.classList.add("game");
-          gameDiv.innerHTML = `
-            <img src="${game}" alt="${titleData[i].title}">
-          `;
-          displayGames.appendChild(gameDiv);
+
+        const contentType = response.headers.get("content-type");
+        if (!contentType || !contentType.includes("application/json")) {
+          throw new Error("Expected JSON response");
         }
-      })
-      .catch((error) => console.error("Error fetching games:", error));
-  }
-  // Handle profile button click
-  const buttonElement = document.getElementById("profile-button");
-  if (buttonElement) {
-    buttonElement.addEventListener("click", () => {
-      window.location.href = "http://localhost:3001/profile";
+
+        const data = await response.json();
+        console.log("Search results:", data);
+
+        if (data && Array.isArray(data.games)) {
+          const displayGames = document.querySelector(".display-games");
+          if (displayGames) {
+            displayGames.innerHTML = "";
+
+            data.games.forEach((game) => {
+              let gameDiv = document.createElement("div");
+              gameDiv.classList.add("game");
+              gameDiv.innerHTML = `
+                <img src="${game.imageUrl || "./images/default.jpg"}" alt="${
+                game.name
+              }">
+                <h3>${game.name}</h3>
+                <p>${game.description || "No description available"}</p>
+              `;
+              displayGames.appendChild(gameDiv);
+            });
+          } else {
+            console.error(
+              "Error: .display-games element not found during form submission"
+            );
+          }
+        } else {
+          console.error("Unexpected response structure:", data);
+        }
+      } catch (error) {
+        console.error("Error fetching games:", error);
+      }
     });
-
+  } else {
+    console.error("Error: form element not found");
   }
-  // Handle menu visibility
-  const divElement = document.querySelector(".menu");
-  const hideButton = document.getElementById("hideButton");
-  if (hideButton && divElement) {
-    hideButton.addEventListener("click", () => {
-      divElement.style.visibility = "hidden";
-    });
-  }
-
-  // document
-  //   .querySelector('#subBtn')
-  //   .addEventListener('click');
-
-  // // Handle login button click
-  // const loginButton = document.querySelector(".login-button");
-  // loginButton.addEventListener("click", () => {
-  //   window.location = "/login";
-  // });
-
-  // Handle search button click
-  document.querySelector("form").addEventListener("submit", async (event) => {
-    event.preventDefault();
-    const paramOne = document.querySelector("#firstSelect").value; // Get the value from the input
-    const paramTwo = document.querySelector("#secondSelect").value;
-    try {
-      // Make a fetch request to the backend for games that match the search
-      const response = await fetch('/api/search', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          filter:paramOne,
-          value: paramTwo
-
-        })
-      });
-
-      const games = await response.json();// Get back the games and parse the JSON response
-
-      console.log("++++++++++++++++++++++++++");
-      console.log(games);
-      // Clear previous results if needed
-      displayGames.innerHTML = "";
-
-      // Loop over the data and create a "game card" for each result from the search
-      //games.forEach((game) => {
-        //let gameDiv = document.createElement("div");
-        //gameDiv.classList.add("game");
-        //gameDiv.innerHTML = `
-                    //<img src="${game.imageUrl}" alt="${game.title}">
-                    //<h3>${game.name}</h3>
-                    //<p>${game.description}</p>
-                //`;
-        //displayGames.appendChild(gameDiv);
-      //});
-      
-    } catch (error) {
-      console.error("Error fetching games:", error);
-    }
-  });
 });
-
