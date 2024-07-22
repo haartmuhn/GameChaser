@@ -6,26 +6,21 @@ const express = require("express");
 const router = express.Router();
 const { Title } = require("../../models");
 // const withAuth = require("../../utils/auth");
-const { Op } = require('sequelize');
+const { Op, where } = require('sequelize');
 // decades,
 // genre, platforms, ratings,
 // Search route with POST method to handle search logic
 router.post("/", async (req, res) => {
-  const { genre } = req.body;
+  //const { genre } = req.body;
+  console.log(req.body);
 
   try {
     console.log('+--------------------- api/users/ hit!!! --------------------');
-    console.log("Request body titles:", genre);
+    const whereObject = {};
+    whereObject[req.body.filter] = req.body.value;
+    console.log(whereObject);
     const titleData = await Title.findAll({
-      where: {
-        [Op.or]: [
-          { genre: genre },
-          // { decade_created: decades },
-          // { rating: ratings },
-          // { genre: genre },
-          // { platforms: platforms },
-        ],
-      },
+      where: whereObject
     });
     console.log("SQL query:", titleData.query);
     console.log("Title data:", titleData);
@@ -34,7 +29,7 @@ router.post("/", async (req, res) => {
     console.log("=============================================565788");
     console.log(titlesFound);
 
-    res.render('search', titlesFound);
+    res.json(titlesFound);
 
   } catch (error) {
     console.error("Error fetching titles:", error);
