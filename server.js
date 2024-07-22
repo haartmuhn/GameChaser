@@ -17,7 +17,11 @@ const hbs = exphbs.create({ helpers });
 
 const sess = {
   secret: "Super secret secret",
-  cookie: {},
+  cookie: {
+    maxAge: 24 * 60 * 60 * 1000, // expires after 1 day
+    httpOnly: true,
+    sameSite: 'strict'
+  },
   resave: false,
   saveUninitialized: true,
   store: new SequelizeStore({
@@ -113,7 +117,7 @@ app.get('/', async (req, res) => {
     const images = await fetchImages();
     const shuffledImages = shuffle(images);
     console.log('Shuffled Images:', shuffledImages); // Debugging line
-    res.render('homepage', { games: shuffledImages });
+    res.render('homepage', { games: shuffledImages, isLoggedIn: req.session.isLoggedIn });
 } catch (error) {
     console.error('Error fetching images:', error);
     res.status(500).send('Internal Server Error');

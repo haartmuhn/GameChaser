@@ -8,7 +8,7 @@ router.get("/", async (req, res) => {
   console.log("homepage route");
   try {
 
-    res.render("homepage");
+    res.render("homepage", {isLoggedIn: res.session.isLoggedIn});
 
   } catch (err) {
     res.json(err);
@@ -17,7 +17,7 @@ router.get("/", async (req, res) => {
 
 router.get("/user", (req, res) => {
   if (req.session.logged_in) {
-    res.redirect("/user");
+    res.redirect("/user", {isLoggedIn: res.locals.isLoggedIn});
     return;
   }
 
