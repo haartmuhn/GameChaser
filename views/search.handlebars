@@ -1,13 +1,13 @@
 
+<div class="flex w-full justify-center my-10">
 <h1 class="text-2xl font-bold flex justify-center">Find The Perfect Game For You!</h1>
-  <div class="flex w-full justify-center my-10">
     <form class="flex justify-center h-10 w-screen">
       <label for="firstSelect" class="mr-5 font-bold">Search:</label>
       <select id="firstSelect" class="rounded-xl mr-5">
         <option value="" disabled selected>Select A Category</option>
         <option id="genre" value="genre">Genre</option>
         <option id="platform" value="platform">Platform</option>
-        <option id="decadeCreated" value="decadeCreated">Decade Created</option>
+        <option id="decade_created" value="decade_created">Decade Created</option>
         <option id="rating" value="rating">Rating</option>
       </select>
       <select id="secondSelect" class="rounded-xl mr-5 hidden">
@@ -15,4 +15,28 @@
       </select>
       <button id="subBtn" type="submit"  class="bg-gray-700 hover:bg-black text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-pink-500 rounded">submit</button>
     </form>
-  </div>
+</div>
+
+<div>
+  {{#each games as |game| }}
+    <div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+      <div class="group relative">
+        <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
+          <img src="https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg" alt="Front of men&#039;s Basic Tee in black." class="h-full w-full object-cover object-center lg:h-full lg:w-full">
+        </div>
+        <div class="mt-4 flex justify-between">
+          <div>
+            <h3 class="text-sm text-gray-700">
+              <a href="#">
+                <span aria-hidden="true" class="absolute inset-0"></span>
+                {{game.name}}, {{game.decade_created}}
+              </a>
+            </h3>
+            <p class="mt-1 text-sm text-gray-500">{{game.platforms}}</p>
+          </div>
+          <p class="text-sm font-medium text-gray-900">{{game.rating}}</p>
+        </div>
+      </div>
+
+{{/each}}
+</div>

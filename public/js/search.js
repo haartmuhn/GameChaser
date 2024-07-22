@@ -11,31 +11,31 @@ $(document).ready(function() {
   function updateSecondSelect() {
       var firstSelectValue = $('#firstSelect').val();
       console.log(firstSelectValue)
-      // Hide second select if no option is selected in the first select
-      if (!firstSelectValue) {
-          $('#secondSelect').hide();
-          return;
-      }
-      
-      var options = optionsByValue[firstSelectValue];
+    // Hide second select if no option is selected in the first select
+    if (!firstSelectValue) {
+        $('#secondSelect').hide();
+        return;
+    }
+    
+    var options = optionsByValue[firstSelectValue];
 
       // Clear existing options in the second select
-      $('#secondSelect').empty();
+    $('#secondSelect').empty();
 
-      // Add new options to the second select
-      $.each(options, function(index, value) {
-          $('#secondSelect').append('<option value="' + value + '">' + value + '</option>');
-      });
+    // Add new options to the second select
+    $.each(options, function(index, value) {
+        $('#secondSelect').append('<option value="' + value + '">' + value + '</option>');
+    });
 
       // Show the second select
-      $('#secondSelect').show();
-  }
+        $('#secondSelect').show();
+    }
 
   // Initial setup on document ready
-  updateSecondSelect();
+    updateSecondSelect();
 
   // Event handler for when the first select changes
-  $('#firstSelect').change(function() {
-      updateSecondSelect();
-  });
+    $('#firstSelect').change(function() {
+        updateSecondSelect();
+    });
 });
