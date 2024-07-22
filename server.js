@@ -61,7 +61,7 @@ async function fetchImages() {
     { src: '/images/image22.jpg', alt: 'Batman' },
     { src: '/images/image23.jpg', alt: 'Bomber Man' },
     { src: '/images/image24.png', alt: 'Halo2' },
-    { src: '/images/image25.jpg', alt: 'Chip n Dale' },
+    { src: '/images/image25.png', alt: 'Chip n Dale' },
     { src: '/images/image26.jpg', alt: 'Phasmophobia' },
     { src: '/images/image27.jpg', alt: 'Pokemon Stadium' },
     { src: '/images/image28.jpg', alt: 'Portal 2' },
