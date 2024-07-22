@@ -1,4 +1,4 @@
-const { Title } = require('../models');
+const { Title, Platform, TitlePlatforms } = require('../models');
 
 const titlesData = [
     {
@@ -8,6 +8,7 @@ const titlesData = [
         rating: 9,
         platforms: [11], // Nintendo Switch
     },
+
     {
         name: 'Ape Escape 3',
         genre: 'Platform',
@@ -703,6 +704,53 @@ const titlesData = [
     },
 ];
 
-const seedTitles = () => Title.bulkCreate(titlesData);
-
-module.exports = seedTitles;
+const seedTitles = async () => {
+    try {
+      // First, create all the titles
+      const createdTitles = await Title.bulkCreate(
+        titlesData.map(({ platforms, ...titleData }) => titleData)
+      );
+  
+      // Create associations between titles and platforms
+      const titlePlatformAssociations = titlesData.flatMap((title, index) => 
+        title.platforms.map(platformId => ({
+          titleId: createdTitles[index].id,
+          platformId: platformId  // Use the platformId directly
+        }))
+      );
+  
+      // Bulk create the associations
+      await TitlePlatforms.bulkCreate(titlePlatformAssociations);
+  
+      console.log('Titles and their platform associations seeded successfully.');
+    } catch (error) {
+      console.error('Error seeding titles data:', error);
+    }
+  };
+  
+  
+  
+  // Helper function to get platform name from ID
+  
+  function getPlatformName(id) {
+  
+    const platforms = [
+  
+      'Dreamcast', 'Game Boy', 'Game Boy Advance', 'Game Boy Color', 'GameCube',
+  
+      'Neo Geo', 'NES', 'Nintendo 3DS', 'Nintendo 64', 'Nintendo DS',
+  
+      'Nintendo Switch', 'PC', 'PlayStation', 'PlayStation 2', 'PlayStation 3',
+  
+      'PlayStation 4', 'PlayStation 5', 'Sega Genesis', 'Sega Saturn', 'SNES',
+  
+      'Wii', 'Wii U', 'Xbox', 'Xbox 360', 'Xbox One', 'Xbox Series X/S'
+  
+    ];
+  
+    return platforms[id - 1];
+  
+  }
+  
+  
+  module.exports = seedTitles;

@@ -1,46 +1,40 @@
 const express = require("express");
 const router = express.Router();
-const { Title } = require("../../models");
+const { Title, Platform } = require('../../models');
+const { Op } = require('sequelize');
 
-// Handle search functionality with POST request
 router.post("/", async (req, res) => {
   const { filter, value } = req.body;
-
   try {
-    console.log(
-      "+--------------------- api/search POST hit!!! --------------------"
-    );
-    console.log("Request body:", req.body);
+    console.log("Search request received:", { filter, value });
 
-    const whereObject = {};
-    whereObject[filter] = value;
-    console.log("whereObject for query:", whereObject);
+    let whereClause = {};
+    let include = [];
+
+    if (filter === 'platform') {
+      include = [{
+        model: Platform,
+        where: { name: value },
+        through: { attributes: [] }
+      }];
+    } else {
+      whereClause[filter] = { [Op.like]: `%${value}%` };
+    }
+
+    console.log("Query parameters:", { whereClause, include });
 
     const titleData = await Title.findAll({
-      where: whereObject,
+      where: whereClause,
+      include: include
     });
 
-    // Log raw title data before mapping
-    console.log("Raw titleData from database:", titleData);
+    console.log("Titles found:", titleData.length);
 
     const titlesFound = titleData.map((title) => title.get({ plain: true }));
-    console.log("Titles found (mapped):", titlesFound);
-
-    res.json({ games: titlesFound }); // Ensure the response has 'games' property
+    res.json({ games: titlesFound });
   } catch (error) {
     console.error("Error fetching titles:", error);
-    res.status(500).json({ error: "Internal Server Error" });
-  }
-});
-
-// Render the search page on GET request
-router.get("/search", async (req, res) => {
-  console.log("GET /search route hit");
-  try {
-    res.render("search");
-  } catch (err) {
-    console.error("Error rendering search page:", err);
-    res.status(500).json({ error: "Internal Server Error" });
+    res.status(500).json({ error: "Internal Server Error", details: error.message });
   }
 });
 

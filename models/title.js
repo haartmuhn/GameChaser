@@ -30,6 +30,16 @@ Title.init(
                 max: 10,
             },
         },
+        platform: {
+            type: DataTypes.STRING,
+            allowNull: true,
+            get() {
+              return this.getDataValue('platform').split(',');
+            },
+            set(val) {
+              this.setDataValue('platform', val.join(','));
+            },
+          }
     },
 
     {

@@ -1,28 +1,29 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
-const { Title } = require('./title');
-const { Platform } = require('./platform');
-
 
 class TitlesPlatforms extends Model { }
 
 TitlesPlatforms.init(
     {
+    id: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        autoIncrement: true,
+        allowNull: false
+    },
     titleId: {
         type: DataTypes.INTEGER,
         references: {
-            model: Title,
-            key: 'titleId',
+            model: 'title',
+            key: 'id',
         },
-        primaryKey: true,
     },
     platformId: {
         type: DataTypes.INTEGER,
         references: {
-            model: Platform,
-            key: 'platformId',
+            model: 'platform',
+            key: 'id',
         },
-        primaryKey: true,
     },
     },
     {
