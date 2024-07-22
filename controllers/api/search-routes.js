@@ -1,50 +1,46 @@
-console.log("=============================================1234");
-console.log("Linked!!!");
-
-
 const express = require("express");
 const router = express.Router();
 const { Title } = require("../../models");
-// const withAuth = require("../../utils/auth");
-const { Op, where } = require('sequelize');
-// decades,
-// genre, platforms, ratings,
-// Search route with POST method to handle search logic
+
+// Handle search functionality with POST request
 router.post("/", async (req, res) => {
-  //const { genre } = req.body;
-  console.log(req.body);
+  const { filter, value } = req.body;
 
   try {
-    console.log('+--------------------- api/users/ hit!!! --------------------');
+    console.log(
+      "+--------------------- api/search POST hit!!! --------------------"
+    );
+    console.log("Request body:", req.body);
+
     const whereObject = {};
-    whereObject[req.body.filter] = req.body.value;
-    console.log(whereObject);
+    whereObject[filter] = value;
+    console.log("whereObject for query:", whereObject);
+
     const titleData = await Title.findAll({
-      where: whereObject
+      where: whereObject,
     });
-    console.log("SQL query:", titleData.query);
-    console.log("Title data:", titleData);
+
+    // Log raw title data before mapping
+    console.log("Raw titleData from database:", titleData);
 
     const titlesFound = titleData.map((title) => title.get({ plain: true }));
-    console.log("=============================================565788");
-    console.log(titlesFound);
+    console.log("Titles found (mapped):", titlesFound);
 
-    res.json(titlesFound);
-
+    res.json({ games: titlesFound }); // Ensure the response has 'games' property
   } catch (error) {
     console.error("Error fetching titles:", error);
-    res.status(500).json({ error: 'Internal Server Error' });
+    res.status(500).json({ error: "Internal Server Error" });
   }
 });
 
-// // Route to render the search page (GET method)
+// Render the search page on GET request
 router.get("/search", async (req, res) => {
-  console.log("search route hit");
+  console.log("GET /search route hit");
   try {
     res.render("search");
   } catch (err) {
     console.error("Error rendering search page:", err);
-    res.json(err);
+    res.status(500).json({ error: "Internal Server Error" });
   }
 });
 
