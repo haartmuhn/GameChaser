@@ -58,7 +58,7 @@ async function fetchImages() {
     { src: '/images/image47.jpg', alt: 'High on Life' },
     { src: '/images/image72.jpg', alt: 'Phasmophobia' },
     { src: '/images/image102.jpg', alt: 'Pokemon Stadium' },
-    { src: '/images/image61.jpg', alt: 'Mario Party 10' },
+    
     { src: '/images/image76.jpg', alt: 'Portal 2' },
     { src: '/images/image84.jpg', alt: 'Street Fighter v Tekken',  },
     { src: '/images/image55.jpg', alt: 'Zelda' },
