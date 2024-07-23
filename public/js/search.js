@@ -102,8 +102,8 @@ $(document).ready(function () {
           } else {
             data.games.forEach(function (game) {
               var gameHtml = `
-                <div class="game-card bg-white rounded-lg shadow-lg overflow-hidden mb-4">
-                  <img src="${game.imageUrl || "./images/default.jpg"}" alt="${
+                <div class="game-card bg-white w-44 rounded-lg shadow-lg overflow-hidden mb-4">
+                  <img src="${game.imageUrl || `./images/image${game.id}.${hasMapExample[game.id]}`}" alt="${
                 game.name
               }" class="w-full h-48 object-cover">
                   <div class="p-4">

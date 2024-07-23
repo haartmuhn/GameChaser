@@ -45,52 +45,44 @@ async function fetchImages() {
     { src: '/images/image2.png', alt: 'Ape Escape 3' },
     { src: '/images/image3.jpg', alt: 'Assassins Creed' },
     { src: '/images/image4.jpg', alt: 'Balders Gate' },
-    { src: '/images/image5.png', alt: 'Stardew Valley' },
-    { src: '/images/image6.png', alt: 'Hearthstone' },
-    { src: '/images/image7.png', alt: 'Mario Party 8' },
-    { src: '/images/image8.png', alt: 'Wizard 101' },
-    { src: '/images/image9.png', alt: 'Call of Duty' },
-    { src: '/images/image10.jpg', alt: 'Cyberpunk' },
-    { src: '/images/image11.png', alt: 'Diablo IV' },
-    { src: '/images/image12.png', alt: 'Donkey Kong' },
-    { src: '/images/image13.png', alt: 'Fossil Fighters' },
-    { src: '/images/image14.png', alt: 'Halo2' },
-    { src: '/images/image15.jpg', alt: 'High on Life' },
-    { src: '/images/image16.jpg', alt: 'Phasmophobia' },
-    { src: '/images/image17.jpg', alt: 'Pokemon Stadium' },
-    { src: '/images/image18.jpg', alt: 'Portal 2' },
-    { src: '/images/image19.jpg', alt: 'Street Fighter v Tekken',  },
-    { src: '/images/image20.jpg', alt: 'Zelda' },
-    { src: '/images/image21.png', alt: 'Banjo Kazooie' },
-    { src: '/images/image22.jpg', alt: 'Batman' },
-    { src: '/images/image23.jpg', alt: 'Bomber Man' },
-    { src: '/images/image24.png', alt: 'Halo2' },
-    { src: '/images/image25.png', alt: 'Chip n Dale' },
-    { src: '/images/image26.jpg', alt: 'Phasmophobia' },
-    { src: '/images/image27.jpg', alt: 'Pokemon Stadium' },
-    { src: '/images/image28.jpg', alt: 'Portal 2' },
-    { src: '/images/image29.jpg', alt: 'Street Fighter v Tekken',  },
-    { src: '/images/image30.jpg', alt: 'Zelda' },
-    { src: '/images/image31.png', alt: 'The Elder Scrolls V Skyrim' },
-    { src: '/images/image32.jpg', alt: 'Animal Crossing' },
-    { src: '/images/image33.jpg', alt: 'Assassins Creed' },
-    { src: '/images/image34.jpg', alt: 'Balders Gate' },
-    { src: '/images/image35.jpg', alt: 'Stardew Valley' },
-    { src: '/images/image36.jpg', alt: 'Hearthstone' },
-    { src: '/images/image37.png', alt: 'Mario Party 8' },
-    { src: '/images/image38.jpg', alt: 'Wizard 101' },
-    { src: '/images/image39.jpg', alt: 'Call of Duty' },
-    { src: '/images/image40.png', alt: 'Cyberpunk' },
-    { src: '/images/image41.jpg', alt: 'Diablo IV' },
-    { src: '/images/image42.png', alt: 'Donkey Kong' },
-    { src: '/images/image43.png', alt: 'Fossil Fighters' },
-    { src: '/images/image44.jpg', alt: 'Halo2' },
-    { src: '/images/image45.jpg', alt: 'High on Life' },
-    { src: '/images/image46.png', alt: 'Phasmophobia' },
-    { src: '/images/image47.png', alt: 'Pokemon Stadium' },
-    { src: '/images/image48.png', alt: 'Portal 2' },
-    { src: '/images/image49.jpg', alt: 'Street Fighter v Tekken',  },
-    { src: '/images/image50.jpg', alt: 'Zelda' },
+    { src: '/images/image83.png', alt: 'Stardew Valley' },
+    { src: '/images/image101.png', alt: 'Hearthstone' },
+    { src: '/images/image60.png', alt: 'Mario Party 8' },
+    { src: '/images/image100.png', alt: 'Wizard 101' },
+    { src: '/images/image11.png', alt: 'Call of Duty' },
+    { src: '/images/image16.jpg', alt: 'Cyberpunk' },
+    { src: '/images/image18.png', alt: 'Diablo IV' },
+    { src: '/images/image19.png', alt: 'Donkey Kong' },
+    { src: '/images/image31.png', alt: 'Fossil Fighters' },
+    { src: '/images/image39.png', alt: 'Halo2' },
+    { src: '/images/image47.jpg', alt: 'High on Life' },
+    { src: '/images/image72.jpg', alt: 'Phasmophobia' },
+    { src: '/images/image102.jpg', alt: 'Pokemon Stadium' },
+    { src: '/images/image61.jpg', alt: 'Mario Party 10' },
+    { src: '/images/image76.jpg', alt: 'Portal 2' },
+    { src: '/images/image84.jpg', alt: 'Street Fighter v Tekken',  },
+    { src: '/images/image55.jpg', alt: 'Zelda' },
+    { src: '/images/image6.png', alt: 'Banjo Kazooie' },
+    { src: '/images/image7.jpg', alt: 'Batman' },
+    { src: '/images/image10.jpg', alt: 'Bomber Man' },
+    
+    { src: '/images/image14.png', alt: 'Chip n Dale' },
+    { src: '/images/image68.png', alt: 'Punch-Out' },
+    
+   
+   
+   
+    
+    { src: '/images/image24.png', alt: 'The Elder Scrolls V Skyrim' },
+    
+   
+    
+    
+    
+    
+   
+    
+   
   ];
 }
 // Shuffle function

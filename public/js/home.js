@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
               let gameDiv = document.createElement("div");
               gameDiv.classList.add("game");
               gameDiv.innerHTML = `
-                <img src="${game.imageUrl || "./images/default.jpg"}" alt="${
+                <img src="${game.imageUrl || `./images/image${game.id}.${hasMapExample[game.id]}`}" alt="${
                 game.name
               }">
                 <h3>${game.name}</h3>
