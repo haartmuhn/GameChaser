@@ -1,0 +1,63 @@
+const hasMapExample = {
+    1: "jpg",
+    2: 'png',
+    3: 'jpg',
+    4: 'jpg',
+
+    6: 'png',
+    7: 'jpg',
+
+    10: 'jpg',
+    11: 'png',
+
+    13: 'png',
+    14: 'png',
+    15: 'jpg',
+    16: 'jpg',
+    17: 'jpg',
+    18: 'png',
+    19: 'png',
+
+    21: 'jpg',
+    22: 'jpg',
+    23: 'jpg',
+    24: 'png',
+    25: 'jpg',
+
+    27: 'jpg',
+    28: 'jpg',
+
+    30: 'jpg',
+    31: 'png',
+    32: 'jpg',
+    33: 'png',
+    34: 'jpg',
+    35: 'jpg',
+    36: 'png',
+
+    38: 'jpg',
+    39: 'png',
+
+    47: 'jpg',
+
+    49: 'png',
+    53: 'jpg',
+    55: 'jpg',
+    57: 'jpg',
+    60: 'png',
+    61: 'png',
+    62: 'jpg',
+    66: 'png',
+    68: 'png',
+    69: 'png',
+    71: 'jpg',
+    72: 'jpg',
+    76: 'jpg',
+    77: 'jpg',
+    83: 'png',
+    84: 'jpg',
+    100: 'png',
+    101: 'png',
+    102: 'jpg',
+    103: 'png',
+}
