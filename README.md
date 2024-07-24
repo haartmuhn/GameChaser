@@ -136,7 +136,7 @@ npm test
 
 **Backend:** [Andrew Hartmann](https://github.com/haartmuh), [Ted Perez](https://github.com/taperez1989) and [Adam Rosenberg](https://github.com/AcoderRose)
 
-Special thanks to Anthony Barragan, Eric Hirsch and Katie Redford.
+Special thanks to Anthony Barragan, Erik Hirsch, Philip Loy, John Titus, Siddharth Shekhar, and Katie Redford.
 
 ## License
 
