@@ -9,7 +9,7 @@ const Sequelize = require("sequelize");
 const sequelize = require("./config/connection");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
 
-// const app = express();
+
 const PORT = process.env.PORT || 3001;
 
 // Set up Handlebars.js engine with custom helpers
@@ -23,11 +23,12 @@ const sess = {
   cookie: {
     maxAge: 24 * 60 * 60 * 1000, // expires after 1 day
     httpOnly: true,
-    sameSite: 'strict'
+    sameSite: 'strict',
+    secure: false
   },
   resave: false,
   saveUninitialized: true,
-  cookie: { secure: true } // Set 'secure: true' if you're using HTTPS
+  
 };
 
 app.use(session(sess));
@@ -174,6 +175,7 @@ app.get('/', async (req, res) => {
   try {
     const images = await fetchImages();
     const shuffledImages = shuffle(images);
+    console.log(req.session.isLoggedIn); // Debugging line
     console.log('Shuffled Images:', shuffledImages); // Debugging line
     res.render('homepage', { games: shuffledImages, isLoggedIn: req.session.isLoggedIn });
 } catch (error) {

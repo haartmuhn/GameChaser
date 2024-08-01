@@ -7,7 +7,7 @@ const withAuth = require("../utils/auth");
 router.get("/", async (req, res) => {
   console.log("homepage route");
   try {
-console.log(res.session.isLoggedIn);
+console.log("is logged in", res.session.isLoggedIn);
     res.render("homepage", {isLoggedIn: res.session.isLoggedIn});
 
   } catch (err) {
@@ -16,10 +16,12 @@ console.log(res.session.isLoggedIn);
 });
 
 router.get("/user", (req, res) => {
-  if (req.session.logged_in) {
-    res.redirect("/user", {isLoggedIn: res.locals.isLoggedIn});
+  if (req.session.isLoggedIn) {
+    res.redirect("/");
     return;
   }
+  console.log("HELLO");
+  console.log(req.session.isLoggedIn);
 
   res.render("login");
 });
@@ -27,7 +29,7 @@ router.get("/user", (req, res) => {
 router.get("/about", async (req, res) => {
   console.log("about route");
   try {
-    res.render("about");
+    res.render("about", {isLoggedIn: res.session.isLoggedIn});
   } catch (err) {
     res.json(err);
   }
@@ -35,7 +37,7 @@ router.get("/about", async (req, res) => {
 
 router.get("/profile", (req, res) => {
   if (req.session.logged_in) {
-    res.redirect("/profile");
+    res.redirect("/profile", {isLoggedIn: res.session.isLoggedIn});
     return;
   }
 

@@ -10,7 +10,7 @@ router.post('/', async (req, res) => {
       password: req.body.password,
     });
     req.session.save(() => {
-      req.session.loggedIn = true;
+      req.session.isLoggedIn = true;
       res.status(200).json(dbUserData);
     });
   } catch (err) {
@@ -21,7 +21,7 @@ router.post('/', async (req, res) => {
 // Login
 router.post('/login', async (req, res) => {
   console.log(req.body)
-  // try {
+  try {
     const dbUserData = await User.findOne({
       where: {
         email: req.body.email,
@@ -37,17 +37,18 @@ router.post('/login', async (req, res) => {
       return;
     }
     req.session.save(() => {
-      req.session.isloggedIn = true;
+      req.session.isLoggedIn = true;
       console.log(
         'File: user-routes.js ~ line 57 ~ req.session.save ~ req.session.cookie',
         req.session.cookie
       );
+      console.log("IS LOGGED IN", req.session.isLoggedIn);
       res.status(200).json({ user: dbUserData, message: 'You are now logged in!' });
     });
-  // } catch (err) {
-  //   console.log(err);
-  //   res.status(500).json(err);
-  // }
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
 });
 // Logout
 router.post('/logout', (req, res) => {
