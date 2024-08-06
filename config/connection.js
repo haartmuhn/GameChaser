@@ -11,6 +11,7 @@ const connection = process.env.DB_URL
         dialectOptions: {
             decimalNumbers: true,
         },
+        logging: false,
     });
 
 module.exports = connection;
