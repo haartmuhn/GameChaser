@@ -7,17 +7,16 @@ const withAuth = require("../utils/auth");
 router.get("/", async (req, res) => {
   console.log("homepage route");
   try {
-console.log("is logged in", res.session.isLoggedIn);
-    res.render("homepage", {isLoggedIn: res.session.isLoggedIn});
-
+    console.log("is logged in", res.session.isLoggedIn);
+    res.render("homepage", { isLoggedIn: res.session.isLoggedIn });
   } catch (err) {
     res.json(err);
   }
 });
 
 router.get("/user", (req, res) => {
-  if (req.session.isLoggedIn) {
-    res.redirect("/");
+  if (req.session.logged_in) {
+    res.redirect("/user", { isLoggedIn: res.locals.isLoggedIn });
     return;
   }
   console.log("HELLO");
@@ -29,7 +28,7 @@ router.get("/user", (req, res) => {
 router.get("/about", async (req, res) => {
   console.log("about route");
   try {
-    res.render("about", {isLoggedIn: req.session.isLoggedIn});
+    res.render("about");
   } catch (err) {
     res.json(err);
   }
@@ -38,7 +37,7 @@ router.get("/about", async (req, res) => {
 router.get("/search", async (req, res) => {
   console.log("search route with session");
   try {
-    res.render("search", {isLoggedIn: req.session.isLoggedIn});
+    res.render("search", { isLoggedIn: req.session.isLoggedIn });
   } catch (err) {
     res.json(err);
   }
@@ -46,7 +45,7 @@ router.get("/search", async (req, res) => {
 
 router.get("/profile", (req, res) => {
   if (req.session.logged_in) {
-    res.redirect("/profile", {isLoggedIn: req.session.isLoggedIn});
+    res.redirect("/profile");
     return;
   }
 
@@ -79,8 +78,6 @@ router.get("/signout", (req, res) => {
 //         ],
 //       },
 //     });
-
-
 
 //     const titlesFound = titleData.map((title) => title.get({ plain: true }));
 //     console.log("=============================================");
