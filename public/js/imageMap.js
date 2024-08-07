@@ -53,7 +53,7 @@ const hasMapExample = {
     50: 'jpg',
     51: 'jpg',
     52: 'jpg',
-    53: 'jpg',
+    53: 'png',
     54: 'jpg',
     55: 'jpg',
     56: 'jpg',
