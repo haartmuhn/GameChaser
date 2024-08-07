@@ -489,7 +489,7 @@ const titlesData = [
     genre: "Role-Playing",
     decade_created: "2020s",
     rating: "6",
-    platforms: "Xbox X/S", // PC, PS5, Xbox Series X/S
+    platforms: "Xbox Series X/S", // PC, PS5, Xbox Series X/S
   },
   {
     name: "NBA 2K24",
@@ -545,7 +545,7 @@ const titlesData = [
     genre: "Action-Adventure",
     decade_created: "1990s",
     rating: "8",
-    platforms: "PS 1", // Nintendo DS, PC, PS1, Sega Saturn
+    platforms: "PS1", // Nintendo DS, PC, PS1, Sega Saturn
   },
   {
     name: "Sonic the Hedgehog",
