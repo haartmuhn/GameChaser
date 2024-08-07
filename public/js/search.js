@@ -16,7 +16,7 @@ $(document).ready(function () {
       "Simulation",
       "Sports",
     ],
-    platform: [
+    platforms: [
       "Dreamcast",
       "Game Boy",
       "Game Boy Advance",
@@ -46,16 +46,12 @@ $(document).ready(function () {
     ],
     decade_created: ["1980s", "1990s", "2000s", "2010s", "2020s"],
     rating: [
-      "1⭐️",
-      "2⭐️",
-      "3⭐️",
-      "4⭐️",
-      "5⭐️",
-      "6⭐️",
-      "7⭐️",
-      "8⭐️",
-      "9⭐️",
-      "10⭐️",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
     ],
   };
 

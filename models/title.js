@@ -24,13 +24,9 @@ Title.init(
             type: DataTypes.STRING,
         },
         rating: {
-            type: DataTypes.DECIMAL(3, 1),
-            validate: {
-                min: 0,
-                max: 10,
+            type: DataTypes.STRING,
             },
         },
-    },
 
     {
         sequelize,
