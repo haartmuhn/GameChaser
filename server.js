@@ -180,7 +180,6 @@ app.get("/", async (req, res) => {
 app.use(routes);
 
 sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () =>
-    console.log(`Server is listening on http://localhost:${PORT}`)
-  );
+  app.listen(PORT, () => console.log(`Listening on PORT ${PORT}`))
+;
 });
