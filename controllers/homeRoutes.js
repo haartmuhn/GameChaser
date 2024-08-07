@@ -35,6 +35,15 @@ router.get("/about", async (req, res) => {
   }
 });
 
+router.get("/search", async (req, res) => {
+  console.log("search route with session");
+  try {
+    res.render("search", {isLoggedIn: req.session.isLoggedIn});
+  } catch (err) {
+    res.json(err);
+  }
+});
+
 router.get("/profile", (req, res) => {
   if (req.session.logged_in) {
     res.redirect("/profile", {isLoggedIn: req.session.isLoggedIn});
