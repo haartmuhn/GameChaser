@@ -29,7 +29,7 @@ router.get("/user", (req, res) => {
 router.get("/about", async (req, res) => {
   console.log("about route");
   try {
-    res.render("about", {isLoggedIn: res.session.isLoggedIn});
+    res.render("about", {isLoggedIn: req.session.isLoggedIn});
   } catch (err) {
     res.json(err);
   }
@@ -37,7 +37,7 @@ router.get("/about", async (req, res) => {
 
 router.get("/profile", (req, res) => {
   if (req.session.logged_in) {
-    res.redirect("/profile", {isLoggedIn: res.session.isLoggedIn});
+    res.redirect("/profile", {isLoggedIn: req.session.isLoggedIn});
     return;
   }
 
