@@ -9,11 +9,11 @@ const loginFormHandler = async (event) => {
       headers: { "Content-Type": "application/json" },
     });
     if (response.ok) {
-      document.location.replace("/");
+      
       const data = await response.json(); // Parse the JSON from the response
       console.log("response data", data); // Log the response data
       localStorage.setItem("response", JSON.stringify(response));
-      // document.location.replace('/');
+      document.location.replace('/');
       console.log("response", response);
     } else {
       alert("Failed to log in.");
