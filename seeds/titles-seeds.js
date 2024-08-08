@@ -13,21 +13,21 @@ const titlesData = [
     genre: "Platform",
     decade_created: "2000s",
     rating: "8",
-    platforms: "PS2", // PS2
+    platforms: "PlayStation 2", // PS2
   },
   {
     name: "Assassin's Creed Origins",
     genre: "Action Role-Playing",
     decade_created: "2010s",
     rating: "9",
-    platforms: "PS4", // PC, PS4, Xbox One
+    platforms: "PlayStation 4", // PC, PS4, Xbox One
   },
   {
     name: "Assassin's Creed Unity",
     genre: "Action Role-Playing",
     decade_created: "2010s",
     rating: "7",
-    platforms: "PS4", // PC, PS4, Xbox One
+    platforms: "PlayStation 4", // PC, PS4, Xbox One
   },
   {
     name: "Baldur's Gate III",
@@ -41,35 +41,35 @@ const titlesData = [
     genre: "Action-Adventure",
     decade_created: "1990s",
     rating: "9",
-    platforms: "N64", // N64, Xbox 360
+    platforms: "Nintendo 64", // N64, Xbox 360
   },
   {
     name: "Batman: Arkham Asylum",
     genre: "Action-Adventure",
     decade_created: "2000s",
     rating: "9",
-    platforms: "PS4", // Nintendo Switch, PC, PS3, PS4, Xbox 360, Xbox One
+    platforms: "PlayStation 4", // Nintendo Switch, PC, PS3, PS4, Xbox 360, Xbox One
   },
   {
     name: "Batman: Arkham City",
     genre: "Action-Adventure",
     decade_created: "2010s",
     rating: "9",
-    platforms: "PS4", // Nintendo Switch, PC, PS3, PS4, Xbox 360, Xbox One
+    platforms: "PlayStation 4", // Nintendo Switch, PC, PS3, PS4, Xbox 360, Xbox One
   },
   {
     name: "Batman: Arkham Knight",
     genre: "Action-Adventure",
     decade_created: "2010s",
     rating: "9",
-    platforms: "PS4", // Nintendo Switch, PC, PS4, Xbox One
+    platforms: "PlayStation 4", // Nintendo Switch, PC, PS4, Xbox One
   },
   {
     name: "Bomberman 64",
     genre: "Action-Adventure",
     decade_created: "1990s",
     rating: "7",
-    platforms: "N64", // N64
+    platforms: "Nintendo 64", // N64
   },
   {
     name: "Call of Duty: Black Ops",
@@ -90,7 +90,7 @@ const titlesData = [
     genre: "Fighting",
     decade_created: "2000s",
     rating: "8",
-    platforms: "PS2", // GameCube, PS2, Xbox
+    platforms: "PlayStation 2", // GameCube, PS2, Xbox
   },
   {
     name: "Chip 'n Dale Rescue Rangers",
@@ -111,21 +111,21 @@ const titlesData = [
     genre: "Action Role-Playing",
     decade_created: "2020s",
     rating: "9",
-    platforms: "PS4", // PC, PS4, PS5, Xbox One, Xbox Series X/S
+    platforms: "PlayStation 4", // PC, PS4, PS5, Xbox One, Xbox Series X/S
   },
   {
     name: "Destiny 2",
     genre: "First-Person Shooter",
     decade_created: "2010s",
     rating: "8",
-    platforms: "PS4", // PC, PS4, PS5, Xbox One, Xbox Series X/S
+    platforms: "PlayStation 4", // PC, PS4, PS5, Xbox One, Xbox Series X/S
   },
   {
     name: "Diablo IV",
     genre: "Action Role-Playing",
     decade_created: "2020s",
     rating: "9",
-    platforms: "PS4", // PS4, PS5, Xbox One, Xbox Series X/S
+    platforms: "PlayStation 4", // PS4, PS5, Xbox One, Xbox Series X/S
   },
   {
     name: "Donkey Kong Country",
@@ -146,7 +146,7 @@ const titlesData = [
     genre: "Fighting",
     decade_created: "2010s",
     rating: "8",
-    platforms: "PS4", // Nintendo Switch, PC, PS4, PS5, Xbox One, Xbox Series X/S
+    platforms: "PlayStation 4", // Nintendo Switch, PC, PS4, PS5, Xbox One, Xbox Series X/S
   },
   {
     name: "EarthBound",
@@ -160,7 +160,7 @@ const titlesData = [
     genre: "Action Role-Playing",
     decade_created: "2020s",
     rating: "10",
-    platforms: "PS4", // PC, PS4, PS5, Xbox One, Xbox Series X/S
+    platforms: "PlayStation 4", // PC, PS4, PS5, Xbox One, Xbox Series X/S
   },
   {
     name: "The Elder Scrolls V: Skyrim",
@@ -188,7 +188,7 @@ const titlesData = [
     genre: "Action Role-Playing",
     decade_created: "2010s",
     rating: "7",
-    platforms: "PS4", // PC, PS4, Xbox One
+    platforms: "PlayStation 4", // PC, PS4, Xbox One
   },
   {
     name: "Final Fantasy II",
@@ -202,7 +202,7 @@ const titlesData = [
     genre: "Role-Playing",
     decade_created: "1990s",
     rating: "9",
-    platforms: "SNES", // Game Boy Advance, Nintendo Switch, PC, PS1, PS4, SNES
+    platforms: "SNES", // Game Boy Advance, Nintendo Switch, PC, "PlayStation", PS4, SNES
   },
   {
     name: "Final Fantasy VII",
@@ -230,42 +230,42 @@ const titlesData = [
     genre: "Platform",
     decade_created: "2010s",
     rating: "10",
-    platforms: "PS4", // PC, PS4
+    platforms: "PlayStation 4", // PC, PS4
   },
   {
     name: "God of War Ragnarök",
     genre: "Platform",
     decade_created: "2020s",
     rating: "10",
-    platforms: "PS4", // PC, PS4, PS5
+    platforms: "PlayStation 4", // PC, PS4, PS5
   },
   {
     name: "GoldenEye 007",
     genre: "First-Person Shooter",
     decade_created: "1990s",
     rating: "9",
-    platforms: "N64", // N64
+    platforms: "Nintendo 64", // N64
   },
   {
     name: "Grand Theft Auto San Andreas",
     genre: "Platform",
     decade_created: "2000s",
     rating: "9",
-    platforms: "PS2", // PS2
+    platforms: "PlayStation 2", // PS2
   },
   {
     name: "Grand Theft Auto: Vice City",
     genre: "Platform",
     decade_created: "2000s",
     rating: "9",
-    platforms: "PS2", // PS2
+    platforms: "PlayStation 2", // PS2
   },
   {
     name: "Guilty Gear Strive",
     genre: "Fighting",
     decade_created: "2020s",
     rating: "9",
-    platforms: "PS4", // PC, PS4, PS5, Xbox One, Xbox Series X/S
+    platforms: "PlayStation 4", // PC, PS4, PS5, Xbox One, Xbox Series X/S
   },
   {
     name: "Halo 2",
@@ -335,42 +335,42 @@ const titlesData = [
     genre: "Fighting",
     decade_created: "2020s",
     rating: "8",
-    platforms: "PS5", // PC, PS4, PS5, Xbox Series X/S
+    platforms: "PlayStation 5", // PC, PS4, PS5, Xbox Series X/S
   },
   {
     name: "Kingdom Hearts",
     genre: "Action Role-Playing",
     decade_created: "2000s",
     rating: "9",
-    platforms: "PS2", // Game Boy Advance, Nintendo DS, Nintendo Switch, PC, PS2, PS3, PS4, Xbox One
+    platforms: "PlayStation 2", // Game Boy Advance, Nintendo DS, Nintendo Switch, PC, PS2, PS3, PS4, Xbox One
   },
   {
     name: "Kingdom Hearts II",
     genre: "Action Role-Playing",
     decade_created: "2000s",
     rating: "9",
-    platforms: "PS2", // PS2
+    platforms: "PlayStation 2", // PS2
   },
   {
     name: "Kingdom Hearts III",
     genre: "Action Role-Playing",
     decade_created: "2010s",
     rating: "8",
-    platforms: "PS4", // Nintendo Switch, PC, PS4, Xbox One
+    platforms: "PlayStation 4", // Nintendo Switch, PC, PS4, Xbox One
   },
   {
     name: "The Last of Us",
     genre: "Action-Adventure",
     decade_created: "2010s",
     rating: "10",
-    platforms: "PS3", // PS3, PS4
+    platforms: "PlayStation 3", // PS3, PS4
   },
   {
     name: "The Last of Us Part II",
     genre: "Action-Adventure",
     decade_created: "2020s",
     rating: "10",
-    platforms: "PS4", // PS4, PS5
+    platforms: "PlayStation 4", // PS4, PS5
   },
   {
     name: "The Legend of Zelda: A Link to the Past",
@@ -391,7 +391,7 @@ const titlesData = [
     genre: "Action-Adventure",
     decade_created: "1990s",
     rating: "10",
-    platforms: "N64", // GameCube, N64
+    platforms: "Nintendo 64", // GameCube, N64
   },
   {
     name: "Luigi's Mansion",
@@ -405,7 +405,7 @@ const titlesData = [
     genre: "Sports",
     decade_created: "1990s",
     rating: "8",
-    platforms: "N64", // Game Boy Color, N64
+    platforms: "Nintendo 64", // Game Boy Color, N64
   },
   {
     name: "Mario Kart 8 Deluxe",
@@ -440,7 +440,7 @@ const titlesData = [
     genre: "Sports",
     decade_created: "2000s",
     rating: "9",
-    platforms: "N64", // Game Boy Color, N64
+    platforms: "Nintendo 64", // Game Boy Color, N64
   },
   {
     name: "Mario Tennis Aces",
@@ -461,14 +461,14 @@ const titlesData = [
     genre: "Platform",
     decade_created: "1990s",
     rating: "9",
-    platforms: "SNES", // GameCube, Nintendo Switch, PC, PS1, PS2, PS4, SNES, Xbox One
+    platforms: "SNES", // GameCube, Nintendo Switch, PC, "PlayStation", PS2, PS4, SNES, Xbox One
   },
   {
     name: "Metal Slug",
     genre: "Run and Gun",
     decade_created: "1990s",
     rating: "8",
-    platforms: "Sega Saturn", // Neo Geo, PS1, Sega Saturn
+    platforms: "Sega Saturn", // Neo Geo, "PlayStation", Sega Saturn
   },
   {
     name: "Mike Tyson's Punch-Out!!",
@@ -482,7 +482,7 @@ const titlesData = [
     genre: "Fighting",
     decade_created: "2020s",
     rating: "8",
-    platforms: "PS5", // Nintendo Switch, PC, PS5, Xbox Series X/S
+    platforms: "PlayStation 5", // Nintendo Switch, PC, PS5, Xbox Series X/S
   },
   {
     name: "New World",
@@ -524,7 +524,7 @@ const titlesData = [
     genre: "Rail Shooter",
     decade_created: "1990s",
     rating: "7",
-    platforms: "N64", // N64
+    platforms: "Nintendo 64", // N64
   },
   {
     name: "Portal 2",
@@ -545,7 +545,7 @@ const titlesData = [
     genre: "Action-Adventure",
     decade_created: "1990s",
     rating: "8",
-    platforms: "PS1", // Nintendo DS, PC, PS1, Sega Saturn
+    platforms: "PlayStation", // Nintendo DS, PC, "PlayStation", Sega Saturn
   },
   {
     name: "Sonic the Hedgehog",
@@ -559,7 +559,7 @@ const titlesData = [
     genre: "Rail Shooter",
     decade_created: "1990s",
     rating: "8",
-    platforms: "N64", // N64
+    platforms: "Nintendo 64", // N64
   },
   {
     name: "Star Wars Episode I: Racer",
@@ -587,7 +587,7 @@ const titlesData = [
     genre: "Fighting",
     decade_created: "2020s",
     rating: "9",
-    platforms: "PS4", // PC, PS4, PS5, Xbox Series X/S
+    platforms: "PlayStation 4", // PC, PS4, PS5, Xbox Series X/S
   },
   {
     name: "Street Fighter III: 3rd Strike",
@@ -601,7 +601,7 @@ const titlesData = [
     genre: "Platform",
     decade_created: "1990s",
     rating: "9",
-    platforms: "N64", // N64
+    platforms: "Nintendo 64", // N64
   },
   {
     name: "Super Mario Sunshine",
@@ -636,42 +636,42 @@ const titlesData = [
     genre: "Sports",
     decade_created: "1990s",
     rating: "9",
-    platforms: "PS1", // Dreamcast, Game Boy Color, N64, PS1
+    platforms: "PlayStation", // Dreamcast, Game Boy Color, N64, "PlayStation"
   },
   {
     name: "Tony Hawk's Pro Skater 2",
     genre: "Sports",
     decade_created: "2000s",
     rating: "9",
-    platforms: "PS1", // Dreamcast, Game Boy Color, GameCube, N64, PC, PS1
+    platforms: "PlayStation", // Dreamcast, Game Boy Color, GameCube, N64, PC, "PlayStation"
   },
   {
     name: "Tony Hawk's Pro Skater 3",
     genre: "Sports",
     decade_created: "2000s",
     rating: "9",
-    platforms: "PS2", // Game Boy Advance, Game Boy Color, GameCube, N64, PC, PS1, PS2, Xbox
+    platforms: "PlayStation 2", // Game Boy Advance, Game Boy Color, GameCube, N64, PC, "PlayStation", PS2, Xbox
   },
   {
     name: "Tony Hawk's Pro Skater 4",
     genre: "Sports",
     decade_created: "2000s",
     rating: "9",
-    platforms: "PS2", // Game Boy Advance, GameCube, PC, PS1, PS2, Xbox
+    platforms: "PlayStation 2", // Game Boy Advance, GameCube, PC, "PlayStation", PS2, Xbox
   },
   {
     name: "Tekken 8",
     genre: "Fighting",
     decade_created: "2020s",
     rating: "9",
-    platforms: "PS5", // PC, PS5, Xbox Series X/S
+    platforms: "PlayStation 5", // PC, PS5, Xbox Series X/S
   },
   {
     name: "Tomb Raider",
     genre: "Action-Adventure",
     decade_created: "1990s",
     rating: "9",
-    platforms: "PS1", // PC, PS1, Sega Saturn
+    platforms: "PlayStation", // PC, "PlayStation", Sega Saturn
   },
   {
     name: "Ultimate Marvel VS Capcom 3",
