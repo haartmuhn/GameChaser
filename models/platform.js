@@ -1,24 +1,24 @@
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
+// const { Model, DataTypes } = require('sequelize');
+// const sequelize = require('../config/connection');
 
 
-class Platform extends Model {}
+// class Platform extends Model {}
 
 
-    Platform.init({
-        name: {
-        type: DataTypes.STRING,
-        allowNull: false,
-    },
-},
+//     Platform.init({
+//         name: {
+//         type: DataTypes.STRING,
+//         allowNull: false,
+//     },
+// },
 
-    {
-        sequelize,
-        timestamps: false,
-        freezeTableName: true,
-        underscored: true,
-        modelName: "platform",
-    }
-);
+//     {
+//         sequelize,
+//         timestamps: false,
+//         freezeTableName: true,
+//         underscored: true,
+//         modelName: "platform",
+//     }
+// );
 
-module.exports = Platform;
+// module.exports = Platform;
