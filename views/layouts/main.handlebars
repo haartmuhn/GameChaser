@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GameChaser</title>
     <link href="https://unpkg.com/tailwindcss@^2.0/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="./images/Initial Logo.png" />
+    <link rel="icon" type="image/x-icon" href="/images/Initial Logo.png" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body class="bg-gray-800 h-5">
@@ -40,18 +40,18 @@
                 </div>
                 <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                     <div class="flex flex-shrink-0 items-center">
-                        <img class="h-8 w-auto" src="./images/gamechaser_logo.png" alt="gamechaser_logo">
+                        <img class="h-8 w-auto" src="/images/gamechaser_logo.png" alt="gamechaser_logo">
                     </div>
                     <div class="hidden sm:ml-6 sm:block">
                         <div class="flex space-x-4">
                             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                            <a href="http://localhost:3001" class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white"
+                            <a href="/" class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white"
                                 aria-current="page">Home</a>
-                            <a href="http://localhost:3001/about"
+                            <a href="/about"
                                 class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">About</a>
-                            <a href="http://localhost:3001/search"
+                            <a href="/search"
                                 class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Search</a>
-                            <a href="http://localhost:3001/user"
+                            <a href="/user"
                                 class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Register</a>
                         </div>
                     </div>
@@ -68,20 +68,20 @@
                                  {{#if isLoggedIn}}
   {{! Set the image source and alt text if logged in }}
   <img class="h-8 w-8 rounded-full profile-icon" 
-       src="./images/game chaser logo 3.0.png" 
+       src="/images/game chaser logo 3.0.png" 
        alt="game chaser logo">
 {{else}}
   {{! Set the image source and alt text if not logged in }}
   <img class="h-8 w-8 rounded-full profile-icon" 
-       src="./images/head-and-shoulders.jpg" 
+       src="/images/head-and-shoulders.jpg" 
        alt="head-and-shoulders-icon">
 {{/if}}
                             </button>
                         </div>
                         <div class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none hidden menu" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
             <!-- Active: "bg-gray-100", Not Active: "" -->
-            <a href="http://localhost:3001/profile" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">My Profile</a>
-            <a href="http://localhost:3001/logout" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-2">Log out</a>
+            <a href="/profile" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">My Profile</a>
+            <a href="/api/user/logout" class="block px-4 py-2 text-sm text-gray-700 logout" role="menuitem" tabindex="-1" id="user-menu-item-2">Log Out</a>
           </div>
                         <!--
             Dropdown menu, show/hide based on menu state.
