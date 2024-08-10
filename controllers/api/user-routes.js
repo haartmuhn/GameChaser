@@ -12,7 +12,7 @@ router.post("/", async (req, res) => {
     });
 
     req.session.save(() => {
-      req.session.loggedIn = true;
+      req.session.isLoggedIn = true;
       res.status(200).json(dbUserData);
     });
   } catch (err) {
@@ -48,12 +48,12 @@ router.post("/login", async (req, res) => {
     }
 
     req.session.save(() => {
-      req.session.loggedIn = true;
+      req.session.isLoggedIn = true;
       console.log(
         "File: user-routes.js ~ line 57 ~ req.session.save ~ req.session.cookie",
         req.session.cookie
       );
-      console.log("IS LOGGED IN", req.session.loggedIn);
+      
       res
         .status(200)
         .json({ user: dbUserData, message: "You are now logged in!" });
@@ -65,13 +65,21 @@ router.post("/login", async (req, res) => {
 });
 
 // Logout
-router.post("/logout", (req, res) => {
-  if (req.session.loggedIn) {
-    req.session.destroy(() => {
-      res.status(204).end();
+router.get("/logout", (req, res) => {
+  console.log("logging out", req.session);
+  if(req.session.isLoggedIn){
+    req.session.isLoggedIn = false;
+  req.session.destroy(err => {
+      if (err) {
+        console.log(err);
+        res.status(500).json({ message: 'Failed to log out' });
+      }
+      res.clearCookie("connect.sid", { path: '/' });
+      //return res.status(200).json({ message: 'Logged out successfully' });
+      res.render("logout",{isLoggedIn:false});
     });
-  } else {
-    res.status(404).end();
+  }else{
+    res.redirect("/user");
   }
 });
 

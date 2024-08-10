@@ -21,13 +21,14 @@ const sess = {
     maxAge: 24 * 60 * 60 * 1000, // expires after 1 day
     httpOnly: true,
     sameSite: "strict",
+    secure: false,
   },
   resave: false,
   saveUninitialized: true,
   store: new SequelizeStore({
     db: sequelize,
   }),
-  cookie: { secure: true }, // Set 'secure: true' if you're using HTTPS
+  
 };
 
 app.use(session(sess));
