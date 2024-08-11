@@ -108,7 +108,7 @@ async function fetchImages() {
     { src: "/images/image65.jpg", alt: "Marvel VS Capcom" },
     { src: "/images/image66.png", alt: "Mega Man X" },
     { src: "/images/image67.png", alt: "Metal Slug" },
-    { src: "/images/image68.png", alt: "Punch-Out" },
+    { src: "/images/image68.PNG", alt: "Punch-Out" },
     { src: "/images/image69.png", alt: "Mortal Kombat" },
     { src: "/images/image70.jpg", alt: "New World" },
     { src: "/images/image71.jpg", alt: "NBA 2K24" },

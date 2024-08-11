@@ -68,7 +68,7 @@ const hasMapExample = {
     65: 'jpg',
     66: 'png',
     67: 'png',
-    68: 'png',
+    68: 'PNG',
     69: 'png',
     70: 'jpg',
     71: 'jpg',
