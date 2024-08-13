@@ -79,7 +79,7 @@ async function fetchImages() {
     { src: "/images/image37.jpg", alt: "Grand Theft Auto" },
     { src: "/images/image38.jpg", alt: "Guilty Gear Strive" },
     { src: "/images/image39.png", alt: "Halo 2" },
-    { src: "/images/image40.jpg", alt: "Halo 3" },
+    { src: "/images/image40.JPG", alt: "Halo 3" },
     { src: "/images/image41.png", alt: "Halo 3: ODST" },
     { src: "/images/image42.png", alt: "Halo 4" },
     { src: "/images/image43.png", alt: "Halo 5" },
